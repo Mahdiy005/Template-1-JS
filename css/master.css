@@ -616,3 +616,44 @@ html {
 /* ---------------------------- */
 /* -----   end gallary   --- */
 /* ---------------------------- */
+
+
+/* ---------------------------- */
+/* -----   start events   --- */
+/* ---------------------------- */
+
+.events {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f9f9f9;
+}
+.events h1 {
+  color: var(--head-color);
+  text-align: center;
+}
+.events .content {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.events .content div {
+  padding: 30px 20px;
+  background: var(--head-color);
+  border-radius: 5px;
+  text-align: center;
+  width: 120px;
+}
+.events .content div span:first-child{
+  display: block;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  border-bottom: 1px solid;
+  margin: 13px 0;
+}
+
+
+/* ---------------------------- */
+/* -----   end events   --- */
+/* ---------------------------- */

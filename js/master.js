@@ -167,11 +167,11 @@ allH3.forEach((h) => {
     // handle next and previoues
     traverse(imgPop, popupBox);
     overLay.onclick = function () {
-      popupBox.remove()
-      overLay.remove()
-      btnNext.remove()
-      btnPrev.remove()
-    }
+      popupBox.remove();
+      overLay.remove();
+      btnNext.remove();
+      btnPrev.remove();
+    };
   });
 });
 
@@ -219,5 +219,43 @@ function traverse(img, box) {
       currentImgIndex == 3 || currentImgIndex == 5 ? "jpg" : "png"
     }`;
   });
-  console.log();
 }
+
+// -----------------------
+// handle countdown events
+// -----------------------
+let daysContent = document.querySelector(".days span");
+let hoursContent = document.querySelector(".hours span");
+let miniutsContent = document.querySelector(".minuits span");
+let secondsContent = document.querySelector(".seconds span");
+let targetTime = new Date("Dec 31 2024 23:59:59").getTime();
+
+let countDownEvents = setInterval(() => {
+  let timeNow = new Date().getTime();
+  reeminderTime = targetTime - timeNow;
+  // get days
+  let days = reeminderTime / (1000 * 60 * 60 * 24);
+  daysContent.innerHTML = parseInt(days);
+
+  // get Hours
+  let hours = (reeminderTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60);
+  hoursContent.innerHTML = `${
+    parseInt(hours) >= 10 ? parseInt(hours) : "0" + parseInt(hours)
+  }`;
+
+  // get minuits
+  let minuts =
+    ((reeminderTime % (1000 * 60 * 60 * 24)) % (1000 * 60 * 60)) / (1000 * 60);
+  miniutsContent.innerHTML = `${
+    parseInt(minuts) >= 10 ? parseInt(minuts) : "0" + parseInt(minuts)
+  }`;
+
+  // get seconds
+  let seconds =
+    (((reeminderTime % (1000 * 60 * 60 * 24)) % (1000 * 60 * 60)) %
+      (1000 * 60)) /
+    1000;
+  secondsContent.innerHTML = `${
+    parseInt(seconds) >= 10 ? parseInt(seconds) : "0" + parseInt(seconds)
+  }`;
+}, 1000);
