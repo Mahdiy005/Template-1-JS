@@ -277,7 +277,7 @@ html {
 
 .settings-box {
   position: fixed;
-  z-index: 10000;
+  z-index: 1000;
   background: white;
   height: 100vh;
   width: 250px;
@@ -389,37 +389,45 @@ html {
   padding-top: 60px;
   padding-bottom: 60px;
 }
+
 .about .container {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
+
 .about .container .info {
   flex: 1;
   text-align: center;
 }
-.about .container .info h2{
+
+.about .container .info h2 {
   color: var(--head-color);
   font-size: 30px;
 }
-.about .container .info p{
+
+.about .container .info p {
   color: var(--main-color);
   line-height: 2;
 }
+
 .about .container .imag {
   /* flex: 1; */
   width: 400px;
   text-align: center;
 }
-.about .container .imag img{
+
+.about .container .imag img {
   width: 80%;
 }
+
 @media (max-width:767px) {
   .about .container .imag {
     display: none;
   }
 }
+
 /* ---------------------------- */
 /* ----- end about us--- */
 /* ---------------------------- */
@@ -432,33 +440,41 @@ html {
   padding-bottom: 60px;
   background-color: #f9f9f9;
 }
+
 .our-skills .skill-area {
   display: flex;
   align-items: start;
 }
+
 .our-skills h1 {
   text-align: center;
-    color: var(--head-color);
-    font-weight: 800;
-    margin-bottom: 55px;
+  color: var(--head-color);
+  font-weight: 800;
+  margin-bottom: 55px;
 }
+
 .our-skills .skill-area img {
   flex: 1;
 }
+
 .our-skills .skill-area .skill-content {
   flex: 1;
 }
+
 .our-skills .skill-area .skill-content .box {
   margin-bottom: 25px;
 }
+
 .our-skills .skill-area .skill-content .box .skill-name {
   margin-bottom: 10px;
 }
+
 .our-skills .skill-area .skill-content .box .progress {
   width: 100%;
   height: 20px;
   background: var(--main-color);
 }
+
 .our-skills .skill-area .skill-content .box .progress span {
   height: 100%;
   width: 0;
@@ -470,11 +486,133 @@ html {
   -ms-transition: 0.6s;
   -o-transition: 0.6s;
 }
+
 @media (max-width:767px) {
-.our-skills .skill-area img {
-  display: none;
+  .our-skills .skill-area img {
+    display: none;
+  }
 }
-}
+
 /* ---------------------------- */
 /* -----   edd our skills   --- */
+/* ---------------------------- */
+
+
+/* ---------------------------- */
+/* -----   start gallary   --- */
+/* ---------------------------- */
+
+.gallary {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.gallary h1 {
+  color: var(--head-color);
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.gallary .gallry-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px; 
+}
+.gallary .gallry-container .car {
+  background-color: var(--main-color);
+  border-radius: 5px;
+  overflow: hidden;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  position: relative;
+}
+.gallary .gallry-container .car h3 {
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #3333334f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: -100%;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  color: white;
+  cursor: pointer;
+}
+.gallary .gallry-container .car:hover h3 {
+  bottom: 0;
+}
+.gallary .gallry-container img {
+  width: 100%;
+}
+.popups-overlay {
+  background-color: #333333a4;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  top: 0;
+}
+.popup-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  z-index: 2001;
+  background-color: white;
+  padding: 10px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  width: 350px;
+}
+.popup-box img {
+  width: 100%;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+}
+.next, .prev {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--head-color);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  background-color: white;
+  border-radius: 50%;
+  font-size: 40px;
+  cursor: pointer;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  z-index: 2002;
+}
+.next {
+  right: 20px;
+}
+.prev {
+  left: 20px;
+}
+
+/* ---------------------------- */
+/* -----   end gallary   --- */
 /* ---------------------------- */

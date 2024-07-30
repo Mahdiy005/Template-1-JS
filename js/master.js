@@ -121,23 +121,103 @@ isRandomBtn.forEach((btn) => {
   });
 });
 
-
-
 // --------------------------
 // handle Our skills animation
 // --------------------------
-let skillsSection = document.querySelector(".our-skills")
-let skillProgress = document.querySelectorAll(".our-skills .box span")
+let skillsSection = document.querySelector(".our-skills");
+let skillProgress = document.querySelectorAll(".our-skills .box span");
 console.log(skillsSection.offsetTop);
 window.onscroll = function () {
-  if(window.scrollY >= skillsSection.offsetTop - 200) {
-    skillProgress.forEach(ele=> {
+  if (window.scrollY >= skillsSection.offsetTop - 200) {
+    skillProgress.forEach((ele) => {
       ele.style.width = ele.dataset.goal;
-    })
+    });
   }
+};
+
+// ----------------------
+// handle gallary popup
+// ----------------------
+let allImgs = document.querySelectorAll(".gallary .car img");
+let allH3 = document.querySelectorAll(".gallary .car h3");
+let currentImgIndex;
+
+allH3.forEach((h) => {
+  h.addEventListener("click", function name() {
+    let overLay = document.createElement("div");
+    let popupBox = document.createElement("div");
+    let imgPop = document.createElement("img");
+    let btnNext = document.createElement("i");
+    let btnPrev = document.createElement("i");
+    // let galTitle = document.c
+    btnNext.classList.add("fa-solid", "fa-circle-chevron-right", "next");
+    btnPrev.classList.add("fa-solid", "fa-circle-chevron-left", "prev");
+    overLay.className = "popups-overlay";
+    document.body.appendChild(overLay);
+    imgPop.src = h.parentElement.children[0].src;
+    currentImgIndex = h.parentElement.children[0].getAttribute("alt");
+    popupBox.className = "popup-box";
+    popupBox.appendChild(imgPop);
+    document.body.appendChild(popupBox);
+    document.body.append(btnNext, btnPrev);
+    // popupBox.append(
+    //   document.querySelector(`[alt="${currentImgIndex}"]`).parentElement
+    //     .children[1]
+    // );
+    // handle next and previoues
+    traverse(imgPop, popupBox);
+    overLay.onclick = function () {
+      popupBox.remove()
+      overLay.remove()
+      btnNext.remove()
+      btnPrev.remove()
+    }
+  });
+});
+
+// document.addEventListener("click", function (e) {
+//   if (e.target.classList.contains("next")) {
+//     let popUpboxImg = document.querySelector(".popup-box img");
+//     let popUpbox = document.querySelector(".popup-box");
+//     currentImgIndex++;
+//     console.log(currentImgIndex == 6);
+//     if (currentImgIndex == 6) {
+//       currentImgIndex = 1;
+//     }
+
+//     popUpboxImg.src = document.querySelector(`[alt="${currentImgIndex}"]`).src;
+//     // popUpbox.children[1].remove();
+//     console.log(
+//       document.querySelector(`[alt="${currentImgIndex}"]`).parentElement
+//         .children[1]
+//     );
+//   }
+// });
+
+// handle next and last image
+function traverse(img, box) {
+  let btnNext = document.querySelector(".next");
+  let btnPrev = document.querySelector(".prev");
+  // let currentImgIndex = 1;
+  btnNext.addEventListener("click", function () {
+    // console.log(currentImgIndex);
+    currentImgIndex++;
+    if (currentImgIndex == 6) {
+      currentImgIndex = 1;
+    }
+    img.src = `../imgs/gallery-0${currentImgIndex}.${
+      currentImgIndex == 3 || currentImgIndex == 5 ? "jpg" : "png"
+    }`;
+  });
+  btnPrev.addEventListener("click", function () {
+    // console.log(currentImgIndex);
+    currentImgIndex--;
+    if (currentImgIndex == 0) {
+      currentImgIndex = 5;
+    }
+    img.src = `../imgs/gallery-0${currentImgIndex}.${
+      currentImgIndex == 3 || currentImgIndex == 5 ? "jpg" : "png"
+    }`;
+  });
+  console.log();
 }
-
-
-
-
-
