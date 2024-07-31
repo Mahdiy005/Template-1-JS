@@ -806,3 +806,48 @@ html {
 /* ---------------------------- */
 /* -----   end events   --- */
 /* ---------------------------- */
+
+
+/* ---------------------------- */
+/* -----   start features   --- */
+/* ---------------------------- */
+
+.our-features {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.our-features h1 {
+  color: var(--head-color);
+  text-align: center;
+  margin-bottom: 60px;
+}
+.our-features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+.our-features .card {
+  background-color: #eee;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  overflow: hidden;
+}
+.our-features .card img {
+  width: 100%;
+}
+.our-features .card h3 {
+  margin: 0;
+  padding: 15px;
+  color: var(--head-color);
+}
+.our-features .card p {
+  padding: 0 15px;
+  color: #777;
+  line-height: 1.8;
+}
+/* ---------------------------- */
+/* -----   end features   --- */
+/* ---------------------------- */
