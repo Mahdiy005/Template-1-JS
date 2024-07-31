@@ -53,6 +53,9 @@ let colorOptions = document.querySelectorAll(
   ".settings-box .setting-options ul li"
 );
 let isRandomBtn = document.querySelectorAll(".random-backgrounds span");
+let navigationBtns = document.querySelectorAll(".setting-options .navi-bullet span")
+let navBulletsDiv = document.querySelector(".nav-bullets");
+
 
 // check if you have color in local storage
 if (window.localStorage.getItem("color")) {
@@ -81,6 +84,17 @@ if (window.localStorage.getItem("randomBG")) {
   document
     .querySelector(`[data-back="${window.localStorage.getItem("randomBG")}"]`)
     .classList.add("active");
+}
+if(window.localStorage.getItem("is_nav")){
+  navigationBtns.forEach(btn=> {
+    btn.classList.remove("active")
+  })
+  if(window.localStorage.getItem("is_nav")==='yes') {
+    navBulletsDiv.style.right = "15px";
+  } else {
+    navBulletsDiv.style.right = "-30px";
+  }
+  document.querySelector(`[data-nav="${window.localStorage.getItem("is_nav")}"]`).classList.add("active")
 }
 gearBtn.onclick = function () {
   settingDiv.classList.toggle("on");
@@ -120,6 +134,25 @@ isRandomBtn.forEach((btn) => {
     this.classList.add("active");
   });
 });
+
+// controle apeeare and disappear navigation bullets 
+
+
+navigationBtns.forEach(btn => {
+  btn.addEventListener("click", function() {
+    if(this.dataset.nav === 'yes') {
+      navBulletsDiv.style.right = "15px";
+    } else {
+      navBulletsDiv.style.right = "-30px";
+    }
+    navigationBtns.forEach(btn=> {
+      btn.classList.remove("active")
+    });
+    this.classList.add("active")
+    window.localStorage.setItem("is_nav", this.dataset.nav)
+  })
+})
+
 
 // --------------------------
 // handle Our skills animation
@@ -259,3 +292,15 @@ let countDownEvents = setInterval(() => {
     parseInt(seconds) >= 10 ? parseInt(seconds) : "0" + parseInt(seconds)
   }`;
 }, 1000);
+
+
+// ------------
+// handle navigation bullets
+// ------------
+let bullets = document.querySelectorAll(".nav-bullets > span")
+
+bullets.forEach(bullet=> {
+  bullet.addEventListener("click", function() {
+    window.location.hash = this.dataset.section;
+  })
+})
