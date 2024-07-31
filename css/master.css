@@ -851,3 +851,84 @@ html {
 /* ---------------------------- */
 /* -----   end features   --- */
 /* ---------------------------- */
+
+/* ---------------------------- */
+/* -----   Start Testimonials   --- */
+/* ---------------------------- */
+.testimonials {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  position: relative;
+  min-height: 500px;
+}
+.testimonials::before {
+  content: '';
+  width: 50%;
+  background-color: var(--head-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+.testimonials::after {
+  content: '';
+  width: 50%;
+  background-color: #333;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+}
+.testimonials h1 {
+  color: white;
+  font-weight: bold;
+  z-index: 3;
+  position: relative;
+  text-align: center;
+}
+.testimonials .testi-contrnt {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+.testimonials .testi-contrnt .card {
+  background-color: white;
+  padding: 20px;
+  position: relative;
+}
+
+.testimonials .user-info h3 {
+  margin: 0;
+}
+.testimonials .card p {
+  line-height: 1.9;
+  color: #777;
+  font-style: italic;
+}
+.testimonials .user-info .rate {
+  margin: 10px;
+}
+.testimonials .user-info .rate span {
+  color: gold;
+  font-size: 17px;
+  
+}
+.testimonials .testi-contrnt img {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  right: -10px;
+  top: -30px;
+  border: 6px solid #eee;
+  z-index: 3;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+/* ---------------------------- */
+/* -----   end Testimonials   --- */
+/* ---------------------------- */
