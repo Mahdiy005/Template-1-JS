@@ -303,3 +303,13 @@ function handleActive(target, arr) {
   });
   target.classList.add("active");
 }
+
+
+// handle reset button
+let resetBtn = document.querySelector(".reset")
+resetBtn.onclick = function () {
+  window.localStorage.removeItem("color")
+  window.localStorage.removeItem("is_nav")
+  window.localStorage.removeItem("randomBG")
+  window.location.reload()
+}
