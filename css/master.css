@@ -370,6 +370,7 @@ html {
   -ms-transition: .2s;
   -o-transition: .2s;
 }
+
 .settings-box .setting-options .random-backgrounds {
   border-bottom: 1px solid #777;
 }
@@ -386,6 +387,7 @@ html {
   background-color: var(--head-color);
   color: #333;
 }
+
 /* ---------------------------- */
 /* ----- end settings Box --- */
 /* ---------------------------- */
@@ -1000,6 +1002,7 @@ html {
   -o-transition: 0.4s;
   z-index: 100001;
 }
+
 .nav-bullets .bullet {
   display: block;
   width: 20px;
@@ -1013,6 +1016,7 @@ html {
   -o-border-radius: 50%;
   position: relative;
 }
+
 .nav-bullets .bullet.active {
   border: 3px solid black;
 }
@@ -1027,6 +1031,7 @@ html {
   top: -8px;
   display: none;
 }
+
 .nav-bullets .bullet .tooltip::before {
   content: '';
   position: absolute;
@@ -1048,9 +1053,85 @@ html {
   cursor: default;
   pointer-events: none;
 }
+
 .nav-bullets .bullet:hover .tooltip {
   display: block;
 }
+
 /* ---------------------------- */
 /* -----   end nav bullets   --- */
+/* ---------------------------- */
+
+.reset {
+  padding: 10px;
+  color: white;
+  background: var(--head-color);
+  margin: 10px;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navi-bullet {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #777;
+}
+
+/* ---------------------------- */
+/* -----   start contact us --- */
+/* ---------------------------- */
+.contact {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: #eee;
+}
+
+.contact h1 {
+  color: var(--head-color);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.contact .container {
+  display: flex;
+  gap: 10px;
+}
+
+.contact .container .right form>input:not(:last-of-type),
+.contact .container .right form textarea {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  margin-bottom: 20px;
+  outline: none;
+
+}
+
+.contact .container .right form textarea {
+  height: 200px;
+  resize: none;
+}
+
+.contact .container .right form input:last-child {
+  display: block;
+  text-align: center;
+  border: none;
+  background-color: var(--head-color);
+  padding: 10px 20px;
+  width: 100%;
+  margin: auto;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width:767px) {
+  .contact .container .left {
+    display: none;
+  }
+}
+
+/* ---------------------------- */
+/* -----   end contact us --- */
 /* ---------------------------- */
